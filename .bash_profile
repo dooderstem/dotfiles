@@ -14,8 +14,7 @@ shopt -s autocd
 shopt -s histappend
 
 nvm use stable
-python -V
-pip -V
+python -V; pip -V; pyenv --version
 ruby -v
 echo "gem version "$(gem -v)""
 
