@@ -411,7 +411,6 @@ FodyWeavers.xsd
 *.sln.iml
 
 # RUBY
-
 *.gem
 *.rbc
 /.config
