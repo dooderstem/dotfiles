@@ -1,11 +1,13 @@
 # fortune | cowsay -f tux
-HOST_NAME=doodercodes
+HOSTNAME=dooderstem
 
 export HISTSIZE=5000
 export HISTFILESIZE=10000
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 export PATH=$PATH:$HOME/bin
+# export BW_SESSION="/ik/C4/c8L5tyLHULY6WqQHjNcFOe+2p0q9BicAR4EQjnY6EYSidqrqTjzldt07o1M6aMHtJuhX50GEEgXy/wg=="
+# $env:BW_SESSION="/ik/C4/c8L5tyLHULY6WqQHjNcFOe+2p0q9BicAR4EQjnY6EYSidqrqTjzldt07o1M6aMHtJuhX50GEEgXy/wg=="
 
 . $HOME/.nvm/nvm.sh
 . $HOME/.bashrc
@@ -13,18 +15,20 @@ export PATH=$PATH:$HOME/bin
 shopt -s autocd
 shopt -s histappend
 
-nvm use stable
-python -V; pip -V; pyenv --version
-ruby -v
-echo "gem version "$(gem -v)""
+# nvm use stable
+# python -V
+# pip -V
+# pyenv --version
+# ruby -v
+# echo "gem version "$(gem -v)""
 
 emojis1=("🎲" "🌍")
 emojis2=("🎲" "💵")
 EMOJI1=${emojis1[$RANDOM % ${#emojis1[@]}]}
 EMOJI2=${emojis2[$RANDOM % ${#emojis2[@]}]}
 
-bind '"\e[A": history-search-backward'
-bind '"\e[B": history-search-forward'
+# bind '"\e[A": history-search-backward'
+# bind '"\e[B": history-search-forward'
 
 txtred='\e[0;31m' # Red
 txtgrn='\e[0;32m' # Green
@@ -36,7 +40,7 @@ function print_before_the_prompt() {
         dir=$PWD
         home=$HOME
         dir=${dir/"$HOME"/"~"}
-        printf "\n $txtred%s: $bldpur%s $txtgrn%s\n$txtrst" "$HOST_NAME" "$dir" #!FIXME - "$(vcprompt)"
+        printf "\n $txtred%s: $bldpur%s $txtgrn%s\n$txtrst" "$HOSTNAME" "$dir" #!FIXME - "$(vcprompt)"
 }
 
 PROMPT_COMMAND=print_before_the_prompt
@@ -51,6 +55,23 @@ function mkcd() {
 # Genaral Aliases
 # ----------------------
 alias x="exit 0"
+alias quit="exit 0"
+alias gpt="npx chatgpt"
+
+alias APPDATA="cd ~/AppData/Roaming"
+alias doodercodes="cd E:/doodercodes"
+alias gitbash="start D:/Git/git-bash.exe"
+alias cmd="cd C:/WINDOWS/system32/ && start cmd.exe"
+
+alias profile="code ~/.bash_profile"
+alias pf="profile"
+alias profilerc="code ~/.bashrc"
+alias pfrc="profilerc"
+
+alias reload="clr; . ~/.bash_profile"
+alias refresh="clr; . ~/.bash_profile"
+alias reloadrc="clr; . ~/.bashrc"
+alias refreshrc="clr; . ~/.bashrc"
 
 alias say="echo"
 
@@ -60,17 +81,8 @@ alias file='touch'
 alias clr='clear'
 alias cls='clear'
 
-alias profile="code ~/.bash_profile"
-alias pf="profile"
-alias profilerc="code ~/.bashrc"
-alias pfrc="profilerc"
-alias reload="clr; . ~/.bash_profile"
-alias reloadrc="clr; . ~/.bashrc"
-alias refresh="clr; . ~/.bash_profile"
-alias refreshrc="clr; . ~/.bashrc"
-
-alias la="ls -al"
-alias ld="ls -dl"
+alias lsal="ls -al"
+alias lsdl="ls -dl"
 
 alias pwd="pwd -LPW"
 alias dir="pwd -LPW"
@@ -78,9 +90,13 @@ alias dir="pwd -LPW"
 alias bitwarden="bw"
 alias ytdl='youtube-dl'
 alias dnr='dotnet run'
-alias py="python"
+# alias py="python"
+# alias pip="python -m pip"
+
 # alias reveal-md="reveal-md --theme night --highlight-theme hybrid --port 1337"
 
+alias jek="jekyll"
+alias jeknew="jekyll new ."
 # ----------------------
 # Git Aliases
 # ----------------------
@@ -117,6 +133,8 @@ alias nr='npm run'
 alias nrun='npm run'
 alias nis='npm i -S'
 alias npmrm='npm uninstall'
+alias nupdate="npm update"
+alias nold="npm outdated"
 
 #######################################################################################################
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" ] # This loads nvm bash_completion
