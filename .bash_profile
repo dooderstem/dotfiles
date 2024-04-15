@@ -1,4 +1,4 @@
-# .bash_profile is executed when a user logs into the system or opens a new terminal window for the first time. This file is executed only once when you log in to your system or open a new terminal emulator window.
+# '.bash_profile' is executed when a user logs into the system or opens a new terminal window for the first time. This file is executed only once when you log in to your system or open a new terminal emulator window.
 
 #FIXME fortune | cowsay -f tux
 
@@ -27,7 +27,7 @@ export PATH=$PATH:$HOME/bin
 # Assign shell dependency files to variables. This makes
 # it easy to source these files for reloading my shell
 # environment when I make changes.
-# Ex: `. $aliases`` or `source $aliases`.
+# Ex: `. $aliases` or `source $aliases`.
 export aliases=~/.bash_aliases
 export pf=~/.bash_profile
 export env=~/.bash_env
