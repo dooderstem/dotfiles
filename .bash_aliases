@@ -2,30 +2,6 @@
 
 #! Sourced in: C:\Users\User\.bash_profile
 
-export aliases=~/.bash_aliases
-
-add_alias() {
-    if ! grep -q "^alias $1='" "$aliases"; then
-        alias $1="$2"
-        sed -i '10,/####### Aliases #######/ {n;/####### Aliases #######/ a\
-'"alias $1='$2'"'
-}' "$aliases"
-        echo "Alias set for '$1' as '$2'."
-    else
-        echo "Alias '$1' already exists."
-    fi
-}
-
-rm_alias() {
-    if alias $1 >/dev/null 2>&1; then
-        unalias $1
-        sed -i "/alias $1=/d" "$aliases"
-        echo "Removed alias for '$1'."
-    else
-        echo "Alias '$1' does not exist. Nothing to remove."
-    fi
-}
-
 ####### Aliases #######
 
 alias *='cd D:/dooder'
