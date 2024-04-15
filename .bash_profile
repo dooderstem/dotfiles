@@ -69,3 +69,7 @@ PS1="$EMOJI1 $EMOJI2 >"
 function mkcd() {
         mkdir $1 && cd $1
 }
+
+function file() {
+        touch $1 && code $1
+}
