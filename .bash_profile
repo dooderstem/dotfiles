@@ -21,19 +21,19 @@ export HISTFILESIZE=10000
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
-# Add ~/bin directory to the PATH.
+# Add '~/bin' directory to the PATH.
 export PATH=$PATH:$HOME/bin
 
 # Assign shell dependency files to variables. This makes
 # it easy to source these files for reloading my shell
 # environment when I make changes.
-# Ex: ". $aliases" or "source $aliases".
+# Ex: `. $aliases`` or `source $aliases`.
 export aliases=~/.bash_aliases
 export pf=~/.bash_profile
 export env=~/.bash_env
 export rc=~/.bashrc
 
-# Source C:\Users\User\.bashrc if it exists.
+# Source 'C:\Users\User\.bashrc' if it exists.
 if [ -f "$rc" ]; then
         source "$rc"
         echo "Sourced: $rc"
@@ -41,7 +41,7 @@ else
         echo "$rc" not found
 fi
 
-# Source C:\Users\User\.bash_aliases if it exists.
+# Source 'C:\Users\User\.bash_aliases' if it exists.
 if [ -f "$aliases" ]; then
         source "$aliases"
         echo "Sourced: $(realpath $aliases)"
@@ -90,7 +90,7 @@ file() {
 
 # Function to add an alias.
 # This function adds the alias to the current bash session and
-# appends the alias definition to C:\Users\User\.bash_aliases
+# appends the alias definition to 'C:\Users\User\.bash_aliases'
 # so that it persists across sessions. If you would like to
 # define a temporary alias, just use `alias hewwo="helloooooo"`.
 add_alias() {
@@ -116,8 +116,8 @@ add_alias() {
 
 # Function to remove an alias.
 # This function removes the alias from both the current bash session
-# and C:\Users\User\.bash_aliases. If you would like to remove an alias
-# temporarily without modifying .bash_aliases, simply prefix your command
+# and 'C:\Users\User\.bash_aliases'. If you would like to remove an alias
+# temporarily without modifying '.bash_aliases', simply prefix your command
 # with `unalias` instead of using this function. For example, type
 # `unalias hewwo` rather than `remove_alias hewwo`.
 rm_alias() {
