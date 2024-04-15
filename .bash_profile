@@ -16,7 +16,6 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 export PATH=$PATH:$HOME/bin
 
 export pf=~/.bash_profile
-export aliases=~/.bash_aliases
 export rc=~/.bashrc
 
 if [ -f "$rc" ]; then
@@ -26,16 +25,17 @@ else
         echo "$rc" not found
 fi
 
+if [ -f ~/.bash_aliases ]; then
+        source ~/.bash_aliases
+        echo "Sourced: $(realpath ~/.bash_aliases)"
+fi
+
 if [ -f ~/.nvm/nvm.sh ]; then
         source ~/.nvm/nvm.sh
         echo "Sourced: $(dirname ~/.nvm/nvm.sh)"
-        nvm use stable #
+        nvm use stable
 else
         echo "nvm not found"
-fi
-
-if [ -f ~/.bash_aliases ]; then
-        source ~/.bash_aliases
 fi
 
 # python -V
