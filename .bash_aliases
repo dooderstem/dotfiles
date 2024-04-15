@@ -1,63 +1,87 @@
-# This script defines a function 'define_alias' to simplify the creation of Bash aliases. It then uses this function to define various aliases for common commands, making them easier to use.
+# This script defines a function 'add_alias' to simplify the creation of Bash aliases. It then uses this function to define various aliases for common commands, making them easier to use.
 
-define_alias() {
-    alias $1="$2"
+#! Sourced in: C:\Users\User\.bash_profile
+
+export aliases=~/.bash_aliases
+
+add_alias() {
+    if ! grep -q "^alias $1='" "$aliases"; then
+        alias $1="$2"
+        sed -i '10,/####### Aliases #######/ {n;/####### Aliases #######/ a\
+'"alias $1='$2'"'
+}' "$HOME/.bash_aliases"
+        echo "Alias set for '$1' as '$2'."
+    else
+        echo "Alias '$1' already exists."
+    fi
 }
 
-# General Aliases
-define_alias '*' 'cd D:/dooder'
-define_alias '**' 'cd D:/dooder/dooderstem'
-define_alias x 'exit 0'
-define_alias quit 'exit 0'
-define_alias bash 'start D:/Git/git-bash.exe'
-define_alias cmd 'start C:/WINDOWS/system32/cmd.exe'
-define_alias bitwarden 'bw'
-define_alias ytdl 'youtube-dl'
-define_alias say 'echo'
-define_alias open 'start ""'
-define_alias clr 'clear'
-define_alias cls 'clear'
-define_alias lsal 'ls -al'
-define_alias lsdl 'ls -dl'
-define_alias pwd 'pwd -LPW'
-define_alias dir 'pwd -LPW'
-define_alias py 'python'
-define_alias pip 'python -m pip'
+rm_alias() {
+    if alias $1 >/dev/null 2>&1; then
+        unalias $1
+        sed -i "/alias $1=/d" "$aliases"
+        echo "Removed alias for '$1'."
+    else
+        echo "Alias '$1' does not exist. Nothing to remove."
+    fi
+}
 
-# Git Aliases
-define_alias ga 'git add'
-define_alias gaa 'git add .'
-define_alias gaaa 'git add -A'
-define_alias gp 'git pull'
-define_alias gpsh 'git push'
-define_alias gpshup 'git push --set-upstream upstream master'
-define_alias grs 'git reset --soft'
-define_alias grh 'git reset --hard'
-define_alias grm 'git rm --cached'
-define_alias gc 'git commit'
-define_alias gcm 'git commit -m'
-define_alias gd 'git diff'
-define_alias gl 'git log'
-define_alias gss 'git status -s'
-define_alias gb 'git branch'
-define_alias gc 'git checkout'
-define_alias gs 'echo ""; echo "*********************************************"; echo -e "   DO NOT FORGET TO PULL BEFORE COMMITTING"; echo "*********************************************"; echo ""; git status'
+####### Aliases #######
 
-# NPM Aliases
-define_alias run 'npm run'
-define_alias nrm 'npm uninstall'
-define_alias nupdate 'npm update'
-define_alias nadd 'npm install'
-define_alias nold 'npm outdated'
-
-# NPX Aliases
-define_alias kuma 'npx uptime-kuma'
-define_alias p5js 'npx p5js'
-define_alias p5 'npx p5js'
-define_alias pm 'npx pm2'
-define_alias nodemon 'npx nodemon'
-define_alias ts 'npx typescript'
-define_alias tsc 'npx tsc'
-define_alias tscw 'npx tsc --watch'
-define_alias next 'npx next'
-define_alias nextapp 'npx create-next-app@latest'
+alias *='cd D:/dooder'
+alias **='cd D:/dooder/dooderstem'
+alias bash='start D:/Git/git-bash.exe'
+alias bitwarden='bw'
+alias chatgpt='npx chatgpt'
+alias clr='clear'
+alias cls='clear'
+alias cmd='start C:/WINDOWS/system32/cmd.exe'
+alias dir='pwd -LPW'
+alias exit='exit 0'
+alias ga='git add'
+alias gaa='git add .'
+alias gaaa='git add -A'
+alias gb='git branch'
+alias gc='git checkout'
+alias gcm='git commit -m'
+alias gd='git diff'
+alias gl='git log'
+alias gp='git pull'
+alias gpsh='git push'
+alias gpshup='git push --set-upstream upstream master'
+alias grh='git reset --hard'
+alias grm='git rm --cached'
+alias grs='git reset --soft'
+alias gs='echo ""; echo "*********************************************"; echo -e "   DO NOT FORGET TO PULL BEFORE COMMITTING"; echo "*********************************************"; echo ""; git status'
+alias gss='git status -s'
+alias ipython='winpty ipython.exe'
+alias kuma='npx uptime-kuma'
+alias ll='ls -l'
+alias logout="exit 0"
+alias ls='ls -F --color=auto --show-control-chars'
+alias lsal='ls -al'
+alias lsdl='ls -dl'
+alias nadd='npm install'
+alias next='npx next'
+alias nextapp='npx create-next-app@latest'
+alias node='winpty node.exe'
+alias nodemon='npx nodemon'
+alias nold='npm outdated'
+alias nrm='npm uninstall'
+alias nupdate='npm update'
+alias open='start ""'
+alias p5='npx p5js'
+alias p5js='npx p5js'
+alias pip='python -m pip'
+alias pm='npx pm2'
+alias pwd='pwd -LPW'
+alias pwsh='powershell.exe'
+alias py='python'
+alias quit='exit 0'
+alias run='npm run'
+alias say='echo'
+alias ts='npx typescript'
+alias tsc='npx tsc'
+alias tscw='npx tsc --watch'
+alias x='exit 0'
+alias ytdl='youtube-dl'
