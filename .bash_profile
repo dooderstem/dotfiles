@@ -30,6 +30,7 @@ export PATH=$PATH:$HOME/bin
 # Ex: ". $aliases" or "source $aliases".
 export aliases=~/.bash_aliases
 export pf=~/.bash_profile
+export env=~/.bash_env
 export rc=~/.bashrc
 
 # Source C:\Users\User\.bashrc if it exists.
