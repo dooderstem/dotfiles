@@ -9,3 +9,10 @@ command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 export PATH="$PYENV_ROOT/libexec:$PATH"
 eval "$(pyenv init -)"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" ] # This loads nvm bash_completion
+
+export bashenv=~/.bash_env
+
+if [ -f "$bashenv" ]; then
+    source "$bashenv"
+    echo "Private environment variables loaded"
+fi
