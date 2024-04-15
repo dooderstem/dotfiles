@@ -25,8 +25,8 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 export PATH=$PATH:$HOME/bin
 
 # Assign shell dependency files to variables. This makes
-# it easy to source these files files for reloading my
-# shell environment when I make changes.
+# it easy to source these files for reloading my shell
+# environment when I make changes.
 # Ex: ". $aliases" or "source $aliases".
 export aliases=~/.bash_aliases
 export pf=~/.bash_profile
