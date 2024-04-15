@@ -12,21 +12,19 @@ export PATH="$PYENV_ROOT/libexec:$PATH"
 eval "$(pyenv init -)"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" ] # This loads nvm bash_completion
 
-export bashenv=~/.bash_env
-
-if [ -f "$bashenv" ]; then
-    if [ -s "$bashenv" ]; then
+if [ -f "$env" ]; then
+    if [ -s "$env" ]; then
         # Check if any uncommented lines exist in the file
-        if grep -q -v '^#' "$bashenv"; then
-            source "$bashenv"
-            echo "Sourced: $(realpath $bashenv)"
+        if grep -q -v '^#' "$env"; then
+            source "$env"
+            echo "Sourced: $(realpath $env)"
 
         else
-            echo "$(realpath $bashenv) ready to load sensitive environment variables"
+            echo "$(realpath $env) ready to load sensitive environment variables"
         fi
     else
-        echo "File '$bashenv' exists but is empty"
+        echo "File '$env' exists but is empty"
     fi
 else
-    echo "File '$bashenv' does not exist"
+    echo "File '$env' does not exist"
 fi
