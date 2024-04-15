@@ -27,7 +27,6 @@ rm_alias() {
 }
 
 ####### Aliases #######
-alias vite='npx vite'
 
 alias *='cd D:/dooder'
 alias **='cd D:/dooder/dooderstem'
@@ -55,10 +54,9 @@ alias grm='git rm --cached'
 alias grs='git reset --soft'
 alias gs='echo ""; echo "*********************************************"; echo -e "   DO NOT FORGET TO PULL BEFORE COMMITTING"; echo "*********************************************"; echo ""; git status'
 alias gss='git status -s'
-alias ipython='winpty ipython.exe'
 alias kuma='npx uptime-kuma'
 alias ll='ls -l'
-alias logout="exit"
+alias logout='exit'
 alias ls='ls -F --color=auto --show-control-chars'
 alias lsal='ls -al'
 alias lsdl='ls -dl'
@@ -84,5 +82,7 @@ alias say='echo'
 alias ts='npx typescript'
 alias tsc='npx tsc'
 alias tscw='npx tsc --watch'
+alias twcss='npx tailwindcss'
+alias vite='npx vite'
 alias x='exit'
 alias ytdl='youtube-dl'
