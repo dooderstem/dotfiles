@@ -103,7 +103,9 @@ add_alias() {
         # Check if alias already exists.
         if ! grep -q "^alias $1='" "$aliases"; then
                 alias "$1"="$2"
-                sed -i '3,/####### Aliases #######/ {/####### Aliases #######/!{n;b};a\
+                # The pattern searches for a match of ####### Aliases #######
+                # after line 2 and places the assigned alias after this marker.
+                sed -i '2,/####### Aliases #######/ {/####### Aliases #######/!{n;b};a\
                 '"alias $1='$2'"'
                 }' "$aliases"
                 # Add the alias to the specified file
