@@ -13,6 +13,17 @@ eval "$(pyenv init -)"
 export bashenv=~/.bash_env
 
 if [ -f "$bashenv" ]; then
-    source "$bashenv"
-    echo "Private environment variables loaded"
+    if [ -s "$bashenv" ]; then
+        # Check if any uncommented lines exist in the file
+        if grep -q -v '^#' "$bashenv"; then
+            source "$bashenv"
+            echo "Private environment variables loaded"
+        else
+            echo "File '$bashenv' exists but all lines are commented out"
+        fi
+    else
+        echo "File '$bashenv' exists but is empty"
+    fi
+else
+    echo "File '$bashenv' does not exist"
 fi
