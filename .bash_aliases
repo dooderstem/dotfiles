@@ -9,7 +9,7 @@ add_alias() {
         alias $1="$2"
         sed -i '10,/####### Aliases #######/ {n;/####### Aliases #######/ a\
 '"alias $1='$2'"'
-}' "$HOME/.bash_aliases"
+}' "$aliases"
         echo "Alias set for '$1' as '$2'."
     else
         echo "Alias '$1' already exists."
