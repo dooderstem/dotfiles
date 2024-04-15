@@ -1,6 +1,6 @@
 # This script defines a function 'add_alias' to simplify the creation of Bash aliases. It then uses this function to define various aliases for common commands, making them easier to use.
 
-#! Sourced in: C:\Users\User\.bash_profile
+#! Sourced in: 'C:\Users\User\.bash_profile'
 
 ####### Aliases #######
 
