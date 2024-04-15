@@ -1,4 +1,4 @@
-DOTFILES=(.bash_profile .bashrc .bash_aliases .bash_env.sh .gitconfig .gitignore)
+DOTFILES=(.bash_profile .bashrc .bash_aliases .bash_env.sh .gitconfig)
 
 # TODO:
 # 1: copy DOTFILES to 'C:\Users\User\.bashrc' if nonexistent
