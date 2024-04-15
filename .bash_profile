@@ -16,6 +16,7 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 export PATH=$PATH:$HOME/bin
 
 export pf=~/.bash_profile
+export aliases=~/.bash_aliases
 export rc=~/.bashrc
 
 if [ -f "$rc" ]; then
