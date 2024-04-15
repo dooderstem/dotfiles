@@ -107,8 +107,7 @@ add_alias() {
                 # after line 2 and places the assigned alias after this marker.
                 sed -i '2,/####### Aliases #######/ {/####### Aliases #######/!{n;b};a\
                 '"alias $1='$2'"'
-                }' "$aliases"
-                # Add the alias to the specified file
+                }' "$aliases" # Add the alias to the specified file
                 echo "Alias set for '$1' as '$2'."
         else
                 echo "Warning: Alias '$1' already exists."
