@@ -8,8 +8,8 @@ export PATH="$PYENV_ROOT/libexec:$PATH"
 eval "$(pyenv init -)"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" ] # This loads nvm bash_completion
 
-# Check if the file specified by the variable $env exists.
-# note: $env is assigned in 'C:\Users\User\.bash_profile'.
+# Check if the file specified by the variable '$env' exists.
+# note: '$env' is assigned in 'C:\Users\User\.bash_profile'.
 if [ -f "$env" ]; then
     # Check if the file has any content
     if [ -s "$env" ]; then
