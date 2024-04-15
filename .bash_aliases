@@ -1,3 +1,5 @@
+# This script defines a function 'define_alias' to simplify the creation of Bash aliases. It then uses this function to define various aliases for common commands, making them easier to use.
+
 define_alias() {
     alias $1="$2"
 }
@@ -21,8 +23,6 @@ define_alias pwd 'pwd -LPW'
 define_alias dir 'pwd -LPW'
 define_alias py 'python'
 define_alias pip 'python -m pip'
-define_alias jek 'jekyll'
-define_alias jeknew 'jekyll new .'
 
 # Git Aliases
 define_alias ga 'git add'
