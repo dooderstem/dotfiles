@@ -27,6 +27,7 @@ rm_alias() {
 }
 
 ####### Aliases #######
+alias vite='npx vite'
 
 alias *='cd D:/dooder'
 alias **='cd D:/dooder/dooderstem'
@@ -57,7 +58,7 @@ alias gss='git status -s'
 alias ipython='winpty ipython.exe'
 alias kuma='npx uptime-kuma'
 alias ll='ls -l'
-alias logout="exit 0"
+alias logout="exit"
 alias ls='ls -F --color=auto --show-control-chars'
 alias lsal='ls -al'
 alias lsdl='ls -dl'
@@ -77,11 +78,11 @@ alias pm='npx pm2'
 alias pwd='pwd -LPW'
 alias pwsh='powershell.exe'
 alias py='python'
-alias quit='exit 0'
+alias quit='exit'
 alias run='npm run'
 alias say='echo'
 alias ts='npx typescript'
 alias tsc='npx tsc'
 alias tscw='npx tsc --watch'
-alias x='exit 0'
+alias x='exit'
 alias ytdl='youtube-dl'
