@@ -78,15 +78,14 @@ bldgrn='\e[1;32m' # Bold Green
 bldpur='\e[1;35m' # Bold Purple
 txtrst='\e[0m'    # Text Reset
 
-# Function to print the current directory, and my
-# hostname (set on line 16) before the prompt.
-print_before_the_prompt() {
-        dir=$PWD
-        home=$HOME
-        # Replace home directory with '~'
-        dir=${dir/"$HOME"/"~"}
-        # Print the formatted prompt.
-        printf "\n $txtred%s: $bldpur%s $txtgrn%s\n$txtrst" "$HOSTNAME" "$dir" #FIXME "$(vcprompt)"
+# Function to create a directory and navigate into it.
+mkcd() {
+        mkdir $1 && cd $1
+}
+
+# Function to create a new file and open it in VS Code.
+file() {
+        touch $1 && code $1
 }
 
 # Function to add an alias.
@@ -141,14 +140,15 @@ rm_alias() {
         fi
 }
 
-# Function to create a directory and navigate into it.
-mkcd() {
-        mkdir $1 && cd $1
-}
-
-# Function to create a new file and open it in VS Code.
-file() {
-        touch $1 && code $1
+# Function to print the current directory, and my
+# hostname (set on line 16) before the prompt.
+print_before_the_prompt() {
+        dir=$PWD
+        home=$HOME
+        # Replace home directory with '~'
+        dir=${dir/"$HOME"/"~"}
+        # Print the formatted prompt.
+        printf "\n $txtred%s: $bldpur%s $txtgrn%s\n$txtrst" "$HOSTNAME" "$dir" #FIXME "$(vcprompt)"
 }
 
 # Set command to run before displaying the prompt.
