@@ -57,12 +57,6 @@ else
         echo "nvm not found"
 fi
 
-# python -V
-# pip -V
-# pyenv --version
-# ruby -v
-# echo "gem version "$(gem -v)""
-
 # Arrays to store emojis for prompt.
 emojis1=("🎲" "🌍")
 emojis2=("🎲" "💵")
