@@ -22,7 +22,6 @@ export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
 # Add '~/bin' directory to the PATH.
-export PATH=$PATH:$HOME/bin
 
 # Assign shell dependency files to variables. This makes
 # it easy to source these files for reloading my shell
