@@ -148,8 +148,20 @@ print_before_the_prompt() {
         home=$HOME
         # Replace home directory with '~'
         dir=${dir/"$HOME"/"~"}
-        # Print the formatted prompt.
-        printf "\n $txtred%s: $bldpur%s $txtgrn%s\n$txtrst" "$HOSTNAME" "$dir" #FIXME "$(vcprompt)"
+        # Check if the vcprompt executable exists
+        if [ -x "$HOME/bin/vcprompt" ]; then
+                # Check if the current directory is a Git repository
+                if [ -d "$dir/.git" ]; then
+                        # If it is a Git repository, print the formatted prompt with vcprompt
+                        printf "\n $txtred%s: $bldpur%s $txtgrn%s\n$txtrst" "$HOSTNAME" "$dir" "$($HOME/bin/vcprompt)"
+                else
+                        # If it is not a Git repository, print the formatted prompt without vcprompt
+                        printf "\n $txtred%s: $bldpur%s $txtgrn%s\n$txtrst" "$HOSTNAME" "$dir"
+                fi
+        else
+                # If vcprompt executable does not exist, print the formatted prompt without vcprompt
+                printf "\n $txtred%s: $bldpur%s $txtgrn%s\n$txtrst" "$HOSTNAME" "$dir"
+        fi
 }
 
 # Set command to run before displaying the prompt.
