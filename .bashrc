@@ -3,10 +3,11 @@
 #! Sourced in 'C:\Users\User\.bash_profile'
 
 export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 export PATH="$PYENV_ROOT/libexec:$PATH"
+export PATH=$PATH:$HOME/bin
+
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" ] # This loads nvm bash_completion
 
 # Check if the file specified by the variable '$env' exists.
 # note: '$env' is assigned in 'C:\Users\User\.bash_profile'.
@@ -29,3 +30,5 @@ if [ -f "$env" ]; then
 else
     echo "File '$env' does not exist"
 fi
+
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" ] # This loads nvm bash_completion
