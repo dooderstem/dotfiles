@@ -77,6 +77,10 @@ file() {
         touch $1 && code $1
 }
 
+mkfile() {
+        mkdir $1 && file $2
+}
+
 # Function to add an alias.
 # This function adds the alias to the current bash session and
 # appends the alias definition to 'C:\Users\User\.bash_aliases'
