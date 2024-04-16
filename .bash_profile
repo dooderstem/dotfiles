@@ -14,15 +14,11 @@ bind '"\e[B": history-search-forward'
 
 # Set my hostname.
 export HOSTNAME=dooderstem
-
 # Set history size and color settings.
 export HISTSIZE=5000
 export HISTFILESIZE=10000
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
-
-# Add '~/bin' directory to the PATH.
-
 # Assign shell dependency files to variables. This makes
 # it easy to source these files for reloading my shell
 # environment when I make changes.
