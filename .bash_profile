@@ -136,7 +136,7 @@ rm_alias() {
 
 # Function to print the current directory, and my
 # hostname (set on line 16) before the prompt.
-print_before_the_prompt() {
+function print_before_the_prompt() {
         dir=$PWD
         home=$HOME
         # Replace home directory with '~'
