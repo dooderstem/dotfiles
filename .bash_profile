@@ -67,9 +67,9 @@ addalias() {
                 sed -i "1,/^####### Aliases #######$/ {/^####### Aliases #######$/!{n;b};a\
                 alias $1='$2'
                 }" "$aliases"
-                printf "\n$txtgrn%s: $txtrst%s" "${FUNCNAME[0]}" "Alias set for '$1' as '$2'"
+                printf "\n$txtgrn%s: $txtrst%s\n" "${FUNCNAME[0]}" "Alias set for '$1' as '$2'"
         else
-                printf "\n$txtred%s: $txtrst%s" "alias ${1} already exists"
+                printf "\n$txtred%s: $txtrst%s\n" "alias ${1} already exists"
 
         fi
 }
