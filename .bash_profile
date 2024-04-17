@@ -59,7 +59,7 @@ clrhist() {
 
 addalias() {
         if [ "$#" -ne 2 ]; then
-                printf "\n$txtred%s: $txtrst%s\n$txtrst%s\n" "${FUNCNAME[0]}" "two parameters are required" "Try '${FUNCNAME[0]} alias command'"
+                printf "\n$txtred%s: $txtrst%s\n$txtrst%s\n" "${FUNCNAME[0]}" "Two parameters are required" "Try '${FUNCNAME[0]} alias command'"
                 return 1
         fi
         if ! grep -q "^alias $1='" "$aliases"; then
@@ -69,14 +69,14 @@ addalias() {
                 }" "$aliases"
                 printf "\n$txtgrn%s: $txtrst%s\n" "${FUNCNAME[0]}" "Alias set for '$1' as '$2'"
         else
-                printf "\n$txtred%s: $txtrst%s\n" "alias ${1} already exists"
+                printf "\n$txtred%s: $txtrst%s\n" "${FUNCNAME[0]}" "Alias '${1}' already exists"
 
         fi
 }
 
 rmalias() {
         if [ "$#" -ne 1 ]; then
-                printf "\n$txtred%s: $txtrst%s\n$txtrst%s\n" "${FUNCNAME[0]}" "parameter required" "Try '${FUNCNAME[0]} alias'"
+                printf "\n$txtred%s: $txtrst%s\n$txtrst%s\n" "${FUNCNAME[0]}" "A parameter is required" "Try '${FUNCNAME[0]} alias'"
                 return 1
         fi
         if alias $1 >/dev/null 2>&1; then
@@ -84,7 +84,7 @@ rmalias() {
                 sed -i "/alias $1=/d" "$aliases"
                 printf "\n$txtgrn%s: $txtrst%s\n" "${FUNCNAME[0]}" "Alias '${1}' removed successfully"
         else
-                printf "\n$txtred%s: $txtrst%s\n" "${FUNCNAME[0]}" "No such alias: ${1}"
+                printf "\n$txtred%s: $txtrst%s\n" "${FUNCNAME[0]}" "No such alias: '${1}'"
                 return 1
         fi
 }
