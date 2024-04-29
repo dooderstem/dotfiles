@@ -1,4 +1,5 @@
 #! bin/bash
+# This file is a wip
 
 update(){
 	sudo apt update
@@ -6,12 +7,11 @@ update(){
 }
 
 installs(){
-	sudo apt install code
-	sudo apt install git
-	sudo apt install gh	
-	sudo apt install flatpak
-	sudo apt install nodejs
-	
+	sudo apt install\
+	 code\
+	 git\
+	 neofetch shellcheck gh flathub nodejs
+
 	flatpak install flathub\
  	com.raggesilver.BlackBox\
  	io.dbeaver.DBeaverCommunity\
