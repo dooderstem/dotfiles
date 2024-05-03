@@ -36,3 +36,6 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 mkdir ~/bin
 curl -sL https://github.com/djl/vcprompt/raw/master/bin/vcprompt > ~/bin/vcprompt
 chmod 755 ~/bin/vcprompt
+
+gsettings set org.gnome.desktop.wm.preferences\
+ focus-new-windows 'smart'
