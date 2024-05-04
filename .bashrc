@@ -56,7 +56,7 @@ addalias() {
         sed -i "1,/^####### Aliases #######$/ {/^####### Aliases #######$/!{n;b};a\
                 alias $1='$2'
                 }" "$HOME/.bash_aliases"
-        printf "\n$txtgrn%s: $txtrst%s\n" "${FUNCNAME[0]}" "Alias set for '$1' as '$2'"
+        printf "\n$txtgrn%s: $txtrst%s\n" "${FUNCNAME[0]}" "Alias set for '$2' as '$1'"
     else
         printf "\n$txtred%s: $txtrst%s\n" "${FUNCNAME[0]}" "Alias '${1}' already exists"
 
