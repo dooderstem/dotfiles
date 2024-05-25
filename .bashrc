@@ -10,6 +10,9 @@ case $- in
 *) return ;;
 esac
 
+COLUMNS=$(tput cols)
+padding=$(( (COLUMNS - ${#text}) / 2 ))
+
 txtred="\e[0;31m" # Red
 txtgrn="\e[0;32m" # Green
 bldgrn="\e[1;32m" # Bold Green
@@ -20,12 +23,10 @@ shopt -s autocd
 shopt -s histappend
 shopt -s checkwinsize
 
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=5000
 HISTFILESIZE=10000
-# don't put duplicate lines or lines starting with space in the history.
-# See bash(1) for more options
 HISTCONTROL=ignoreboth
+
 CLICOLOR=1
 LSCOLORS=GxFxCxDxBxegedabagaced
 
@@ -182,4 +183,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
-nvm use stable
+printf "\r%*s%s\n" $padding "" "$(nvm use stable)"
+neofetch
+fortune | cowsay
+
